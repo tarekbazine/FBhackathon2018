@@ -11,8 +11,6 @@ fun main(args:Array<String>){
 
     val linesList = File(fileName).readLines()
 
-//    print(linesList[0].toInt())
-
     var lineIndex = 1
     var str : List<String>
     var n = 0
@@ -23,7 +21,6 @@ fun main(args:Array<String>){
     var firstAttractionIndex = 0
     var selectedAttractionList = ArrayList<Int>()
 
-//    val writer = File("tourist_output.txt").printWriter()
     val writer = File("tourist_output.txt")
 
     for(i in 0 until linesList[0].toInt()){
@@ -36,24 +33,14 @@ fun main(args:Array<String>){
         ((lineIndex+1)..(lineIndex+n)).
                 mapTo(attractionList) { linesList[it] }
 
-//        print(attractionList)
-
         firstAttractionIndex = ( k * (v - 1) % n ).toInt()
         (0 until k).mapTo(selectedAttractionList) {
             (firstAttractionIndex+ it) % n
-//            println(attractionList[(firstAttractionIndex+m) % n])
         }
 
 
         selectedAttractionList.sort()
 
-        selectedAttractionList.forEach {
-            it -> println(attractionList[it])
-        }
-
-//        writer.use {
-//            out -> out.println("Case #$i:")
-//        }
         writer.appendText("Case #${i+1}:")
 
         selectedAttractionList.forEach {
@@ -64,20 +51,10 @@ fun main(args:Array<String>){
         writer.appendText("\n")
 
 
-//        print(" "+n +" "+ k +" "+ v)
-        println("#")
         lineIndex += (n + 1)
         attractionList = ArrayList<String>()
         selectedAttractionList = ArrayList<Int>()
     }
 
-//    File("tourist_output.txt").printWriter().use { out ->
-//
-//        history.forEach {
-//            out.println("${it.key}, ${it.value}")
-//        }
-//    }
-
-//    "Case #${}:"
-//
+    print("==> bOoM")
 }
