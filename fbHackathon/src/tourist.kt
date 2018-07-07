@@ -7,7 +7,7 @@ import java.io.File
 
 fun main(args:Array<String>){
 
-    val fileName = "tourist_example_input.txt"
+    val fileName = "tourist.txt"
 
     val linesList = File(fileName).readLines()
 
